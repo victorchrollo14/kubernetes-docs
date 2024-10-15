@@ -1,0 +1,10 @@
+apiVersion: v1 # version of k8s used;
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers: # array of containers
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80 # port on which the pod will run
