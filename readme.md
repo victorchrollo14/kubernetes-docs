@@ -10,9 +10,12 @@
 
 ## tasks completed
 
-- [x] learnt basic k8s jargons - clusters, nodes, pods, containers, control-plane, worker-node, deployments, replicaset, services, nodePort.
+- [x] learnt basic k8s jargons - clusters, nodes, pods, containers, control-plane
+      , worker-node, deployments, replicaset, services, nodePort.
 - [x] Ran all the above stuff locally using kind and kubectl.
-- [x] Created a k8s cluster on digital ocean and made a deployment with 3 nginx pods, then created a service to expose the nginx pod on port 30005 and was able to hit the port via curl
+- [x] Created a k8s cluster on digital ocean and made a deployment with 3 nginx pods,
+      then created a service to expose the nginx pod on port 30005 and
+      was able to hit the port via curl.
 
   ```bash
   # to get EXTERNAL-IP
@@ -21,3 +24,10 @@
   curl http://EXTERNAL-IP:30005
 
   ```
+
+- [x] create a loadbalancer service on digital ocean k8s cluster and accessed the nginx from the EXTERNAL-IP of the loadbalancer
+
+## tasks to do
+
+- [] lecture 3 - namespaces, ingress, ingress controller (nginx, traefik), configMaps, secrets.
+- [] learn stuff from lecture 4
