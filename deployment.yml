@@ -1,18 +1,19 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment # kind specifies the kind of service we are creating within k8s
 metadata:
-  name: nginx-deployment
+  name: nginx-deployment # name of the deployemnt
+  namespace: default # name space within which the deployment runs
 spec:
-  replicas: 3
-  selector:
+  replicas: 2
+  selector: # this is used to identify which pods belong to this deployment
     matchLabels:
       app: nginx
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx # labels for a pod
     spec:
-      containers:
+      containers: # list of containers that run within a pod
         - name: nginx
           image: nginx:latest
           ports:
