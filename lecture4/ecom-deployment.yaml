@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecom-secret-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecom-secret-backend
+  template:
+    metadata:
+      labels:
+        app: ecom-secret-backend
+    spec:
+      containers:
+        - name: ecom-backend
+          image: victorchrollo14/env-backend
+          ports:
+            - containerPort: 3000
+          env:
+            - name: USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: express-secret
+                  key: username
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: express-secret
+                  key: password
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: express-secret-service
+spec:
+  type: NodePort
+  selector:
+    app: ecom-secret-backend
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30008
