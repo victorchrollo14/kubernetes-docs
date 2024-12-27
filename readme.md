@@ -18,25 +18,25 @@
       then created a service to expose the nginx pod on port 30005 and
       was able to hit the port via curl.
 
-  ```bash
-  # to get EXTERNAL-IP
-  kubectl get nodes -owide
+```bash
+# to get EXTERNAL-IP
+kubectl get nodes -owide
 
-  curl http://EXTERNAL-IP:30005
+curl http://EXTERNAL-IP:30005
 
-  ```
+```
 
 - [x] create a loadbalancer service on digital ocean k8s cluster
       and accessed the nginx from the EXTERNAL-IP of the loadbalancer
 - [x] lecture 3 - namespaces, ingress, ingress controller
       (nginx, traefik).
 - [x] learned about ingress controller, created a nginx ingress loadbalancer and added different domain names for apache pods and nginx pods. apache.victorimmanuel.me points to apache and nginx.victorimmanuel.me point to nginx
+- [x] lecture 4 (secrets, configMaps and volume mounts)
+- [x] deploy the quickmeet application on k8s and added ssl certificate using cert-manager.
 
 ## tasks to do
 
-- [] lecture 4 (secrets, configMaps and volume mounts)
 - [] lecture 5 (more about volumes, horizontal pod autoscale)
-- [] deploy the quickmeet application on k8s.
 - [] lecture 6 (HPA node autoscaling, resource management)
 - [] build leetcode and deploy all the stuff using k8s
 
