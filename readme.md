@@ -32,13 +32,14 @@ curl http://EXTERNAL-IP:30005
       (nginx, traefik).
 - [x] learned about ingress controller, created a nginx ingress loadbalancer and added different domain names for apache pods and nginx pods. apache.victorimmanuel.me points to apache and nginx.victorimmanuel.me point to nginx
 - [x] lecture 4 (secrets, configMaps and volume mounts)
-- [x] deploy the quickmeet application on k8s and added ssl certificate using cert-manager.
+- [x] deploy the quickmeet application on k8s and added ssl certificate using cert-manager. ( https://github.com/victorchrollo14/QuickMeet/tree/master/kubernetes )
+- [x] lecture 5 (more about volumes, horizontal pod autoscale)
+- [x] lecture 6 (HPA node autoscaling, resource management)
 
 ## tasks to do
-
-- [] lecture 5 (more about volumes, horizontal pod autoscale)
-- [] lecture 6 (HPA node autoscaling, resource management)
-- [] build leetcode and deploy all the stuff using k8s
+- [ ] build leetcode and deploy all the stuff using k8s
+- [ ] k8s the hard way
+- [ ] deploy the current work related stuff on k8s, main application, 3d model convertion worker, then the streaming server.
 
 ### Questions
 
@@ -55,3 +56,12 @@ curl http://EXTERNAL-IP:30005
   if you create more deployments then you'll have the overhead of managing
   too many loadblancers, plus the cost would be high etc
 - we can't manage the rate limiting logic at a single place
+
+2. How does it work?
+- use helm to install the ingress-controller, which is an addon controller that can be added to the kube-controller-manager.
+- create cluster Ip service for your pods, then create the ingress service that points to your pods cluster Ip server, can view the config under lecture3/ingress-full.yaml
+
+![ingress-controller](https://github.com/user-attachments/assets/d136888f-aa03-4823-b9e2-5896268b219a)
+
+
+
