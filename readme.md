@@ -59,7 +59,8 @@ curl http://EXTERNAL-IP:30005
 
 2. How does it work?
 - use helm to install the ingress-controller, which is an addon controller that can be added to the kube-controller-manager.
-- create cluster Ip service for your pods, then create the ingress service that points to your pods cluster Ip server, can view the config under lecture3/ingress-full.yaml
+- create cluster Ip service for your pods, then create the ingress service that points to your pods cluster Ip service, can view the config under lecture3/ingress-full.yaml
+- apply the configuration using ` kubectl apply -f ingress-full.yaml ` the clusters cloud provider would create a ingress load balancer that points to the ingress pod. the requests would be recieved from the ingress load balancer, which will be routed to the ingress pod, the ingress pod routes it to the appropriate pod, the ingress pod can access the pods through the clusterIP service of the individual pods.
 
 ![ingress-controller](https://github.com/user-attachments/assets/d136888f-aa03-4823-b9e2-5896268b219a)
 
